@@ -19,7 +19,7 @@
           // Load the SVG dynamically
           function loadSVG() {
             document.getElementById("svgContainer").innerHTML ="started"
-            fetch("image/example.svg") // Replace with your actual SVG file path
+            fetch("images/example.svg") // Replace with your actual SVG file path
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
