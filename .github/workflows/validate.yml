@@ -1,0 +1,28 @@
+name: validate-SVG
+on: push
+
+permissions:
+  checks: write
+  pull-requests: write
+
+jobs:
+  validate-linter:
+    name: Run SVG Linter
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Install xmllint
+      shell: bash
+      run: |
+        sudo apt update
+        sudo apt install -y libxml2-utils
+        
+        
+    - name: run xmllint
+      shell: bash
+      run: |
+        xmllint --loaddtd --dtdvalid "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" images/example.svg
+       
