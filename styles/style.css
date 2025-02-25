@@ -1,8 +1,60 @@
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        svg {
-            border: 1px solid #000;
-            margin-top: 20px;
-        }
+/* Light pastel gradient background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Fancy glassmorphism container for the SVG */
+#svgContainer {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+#svgContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure the SVG scales properly */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Soft, stylish button */
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border: none;
+    border-radius: 30px;
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for button */
+button:hover {
+    background: linear-gradient(135deg, #fcb69f, #ffecd2);
+    transform: scale(1.1);
+}
