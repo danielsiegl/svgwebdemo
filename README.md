@@ -13,4 +13,8 @@ Allowing you to test via [http://localhost:8000/](http://localhost:8000/)
 The published version can be found here:
 [https://danielsiegl.github.io/svgwebdemo/](https://danielsiegl.github.io/svgwebdemo/)
 
-
+## prepare to execute playwright
+`winget install -e --id OpenJS.NodeJS`
+==`npm install --save-dev test`==
+`npm install --save-dev @playwright/test`
+`npx playwright test`
