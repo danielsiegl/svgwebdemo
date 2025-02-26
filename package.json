@@ -1,6 +1,10 @@
 {
+  "scripts": {
+    "start": "node node_modules/playwright-core/lib/utils/httpServer.js"
+  },
   "devDependencies": {
     "@playwright/test": "^1.50.1",
-    "playwright": "^1.50.1"
+    "playwright": "^1.50.1",
+    "wait-on": "^8.0.2"
   }
 }

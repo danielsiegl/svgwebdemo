@@ -16,5 +16,7 @@ The published version can be found here:
 ## prepare to execute playwright
 `winget install -e --id OpenJS.NodeJS`
 ==`npm install --save-dev test`==
+
 `npm install --save-dev @playwright/test`
+`npx playwright install`
 `npx playwright test`
