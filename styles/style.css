@@ -53,7 +53,7 @@ button {
     box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
 }
 
-/* Hover effect for button */
+/* Hover effect for buttons */
 button:hover {
     background: linear-gradient(135deg, #fcb69f, #ffecd2);
     transform: scale(1.1);
