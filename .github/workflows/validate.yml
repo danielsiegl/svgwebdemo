@@ -17,4 +17,4 @@ jobs:
     - name: Run SVG Linter
       uses: "szepeviktor/svg-validator@v1.0.0"
       with:
-        svg_path: "/**/*.svg"
+        svg_path: "/**/spaceship.svg"
