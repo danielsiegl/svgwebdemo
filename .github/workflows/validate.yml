@@ -25,3 +25,9 @@ jobs:
       uses: "szepeviktor/svg-validator@v1.0.0"
       with:
         svg_path: "/**/spaceship.svg"
+
+    - name: Run SVG Linter spaceshipwithexampleheader.svg
+      if: always()
+      uses: "szepeviktor/svg-validator@v1.0.0"
+      with:
+        svg_path: "/**/spaceshipwithexampleheader.svg"
