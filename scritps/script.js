@@ -4,9 +4,9 @@
         //     circle.setAttribute("cx", currentX + 20);
         // }
 
-        function moveCircle() {
+        function moveObejectRight() {
 
-             moveSection('myCircle', 20, 0);
+             moveSection('spaceship', 20, 0);
            }
 
         function moveSection(idStr, xOffset, yOffset) {
@@ -27,7 +27,11 @@
                     return response.text();
                 }) // Get the SVG as text
                 .then(svgText => {
-                    document.getElementById("svgContainer").innerHTML = svgText; // Inject SVG
+                    //remove the SVG header and add a new one
+                    let svgLines = svgText.split('\n');
+                    svgLines.splice(0, 3, '<svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" version="1.1" height="200" width="200" viewBox="0 0 200 200">');
+                    updatedSVG = svgLines.join('\n');
+                    document.getElementById("svgContainer").innerHTML = updatedSVG; // Inject SVG
                 })
                 .catch(error => {
                     console.error("Error loading SVG:", error);
@@ -37,12 +41,9 @@
 
         // Change the color of a specific element inside the SVG
         function changeSVGColor() {
-            let svgElement = document.querySelector("#svgContainer svg"); // Select the SVG
-            if (svgElement) {
-                let circle = svgElement.querySelector("myCircle"); // Select the circle inside the SVG
-                if (circle) {
-                    circle.setAttribute("fill", "red"); // Change color
-                }
+            var domElemnt = document.getElementById("spaceshipWindow");
+            if (domElemnt) {
+                domElemnt.setAttribute("fill", "red"); 
             }
         }
 
