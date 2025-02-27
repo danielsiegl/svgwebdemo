@@ -1,4 +1,3 @@
-# This workflow runs a linter's on various file types
 name: Validate
 on: push
 
