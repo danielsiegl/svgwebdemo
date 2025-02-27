@@ -14,7 +14,14 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v4
 
-    - name: Run SVG Linter
+    - name: Run SVG Linter example.svg
+      if: always()
+      uses: "szepeviktor/svg-validator@v1.0.0"
+      with:
+        svg_path: "/**/example.svg"
+
+    - name: Run SVG Linter spaceship.svg
+      if: always()
       uses: "szepeviktor/svg-validator@v1.0.0"
       with:
         svg_path: "/**/spaceship.svg"
