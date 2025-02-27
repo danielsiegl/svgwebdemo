@@ -7,6 +7,16 @@ permissions:
   pull-requests: write
 
 jobs:
+  css-linter:
+    name: Run CSS Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CSS Linter
+        uses: actions-hub/stylelint@v1.1.6
+        env:
+          PATTERN: "styles/*.css"
+
   powershell-linter:
     name: Run Powershell Linter
     runs-on: ubuntu-latest
