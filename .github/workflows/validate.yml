@@ -16,6 +16,7 @@ jobs:
         uses: actions-hub/stylelint@v1.1.6
         env:
           PATTERN: "styles/*.css"
+          INDENT_SPACES: 4
 
   powershell-linter:
     name: Run Powershell Linter
