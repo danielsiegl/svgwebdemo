@@ -14,15 +14,8 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v4
 
-    - name: Install xmllint
-      shell: bash
-      run: |
-        sudo apt update
-        sudo apt install -y libxml2-utils
-        
-        
-    - name: run xmllint
-      shell: bash
-      run: |
-        xmllint --loaddtd --dtdvalid "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" images/example.svg
-       
+    - name: Run SVG Linter
+      if: always()
+      uses: "szepeviktor/svg-validator@v1.0.0"
+      with:
+        svg_path: "/**/*.svg"
