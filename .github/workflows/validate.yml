@@ -12,12 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci  # or npm install if using package-lock.json
+      
       - name: Run CSS Linter
         if: always()
         uses: actions-hub/stylelint@v1.1.6
         env:
           PATTERN: "styles/*.css"
-        
+      
       - name: Run lint action
         if: always()
         uses: wearerequired/lint-action@v2
