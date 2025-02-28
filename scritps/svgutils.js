@@ -1,4 +1,4 @@
-function moveSection(idStr, xOffset, yOffset) {
+export function moveSection(idStr, xOffset, yOffset) {
     var domElemnt = document.getElementById(idStr);
     if (domElemnt) {
         var transformAttr = ' translate(' + xOffset + ',' + yOffset + ')';

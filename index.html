@@ -9,18 +9,20 @@
 </head>
 <body>
     <h1>Move the Rocket</h1>
-    Source can be found on GithUB: <a href="https://github.com/danielsiegl/svgwebdemo/">svgwebdemo</a>
+    Source can be found on GitHub: <a href="https://github.com/danielsiegl/svgwebdemo/">svgwebdemo</a>
     <br>
     
     <!-- we load the svg into this div to make it easier to manipulate via js -->
     <div id="svg-Container">Loading SVG...</div>
-
-    <!-- Button to move the circle -->   
+    
+    <!-- Buttons to move the SVG -->
+    <button onclick="moveSpaceShipLeft()">Move Left</button>
     <button onclick="moveSpaceShipRight()">Move Right</button>
+    
     <!-- Button to change SVG color -->
     <button onclick="changeSVGColor()">Change Circle Color</button>
 
-    <script src="scritps/script.js"></script>
+    <script type="module" src="scritps/script.js"></script>
 
 </body>
 </html>
