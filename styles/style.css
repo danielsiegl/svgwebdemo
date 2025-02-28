@@ -56,4 +56,5 @@ button {
 /* Hover effect for buttons */
 button:hover {
     background: linear-gradient(135deg, #fcb69f, #ffecd2);
-    transform: scale(1.1);}
+    transform: scale(1.1);
+}
