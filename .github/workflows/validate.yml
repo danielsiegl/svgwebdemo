@@ -12,6 +12,24 @@ permissions:
   pull-requests: write
 
 jobs:
+  html-linter:
+    name: Run HTML Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run HTML5Validator
+        if: always()
+        uses: Cyb3r-Jak3/html5validator-action
+        with:
+         root: /
+      
+      - name: Proof HTML
+        if: always()
+        uses: anishathalye/proof-html@v2.2.0
+        with:
+          directory: ./
+
   css-linter:
     name: Run CSS Linter
     runs-on: ubuntu-latest
