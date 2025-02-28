@@ -1,6 +1,11 @@
 # This workflow runs a linter's on various file types
 name: Validate
-on: push
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
   checks: write
