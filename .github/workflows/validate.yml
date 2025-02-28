@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Run HTML5Validator
-      #   if: always()
-      #   uses: Cyb3r-Jak3/html5validator-action
-      #   with:
-      #    root: /
+      - name: Run HTML5Validator
+        if: always()
+        uses: Cyb3r-Jak3/html5validator-action
+        with:
+         root: /
       
       - name: Proof HTML
         if: always()
