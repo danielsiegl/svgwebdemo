@@ -1,6 +1,6 @@
 /* Light pastel gradient background */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins, sans-serif;
     background: linear-gradient(135deg, #fdfbfb, #ebedee);
     color: #333;
     text-align: center;
@@ -13,22 +13,22 @@ body {
 }
 
 /* Fancy glassmorphism container for the SVG */
-#svgContainer {
+#svg-container {
     width: 400px;
     height: 300px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgb(255 255 255 / 60%);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
     transition: transform 0.3s ease-in-out;
 }
 
 /* Hover effect */
-#svgContainer:hover {
+#svg-container:hover {
     transform: scale(1.05);
 }
 
@@ -50,10 +50,10 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
 }
 
-/* Hover effect for button */
+/* Hover effect for buttons */
 button:hover {
     background: linear-gradient(135deg, #fcb69f, #ffecd2);
     transform: scale(1.1);
