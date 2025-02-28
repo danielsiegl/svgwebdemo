@@ -1,21 +1,10 @@
-        // function moveCircle() {
-        //     let circle = document.getElementById("myCircle");
-        //     let currentX = parseInt(circle.getAttribute("cx"));
-        //     circle.setAttribute("cx", currentX + 20);
-        // }
+import { moveSection } from './svgutils.js';
 
-        function moveObejectRight() {
+function moveSpaceShipRight() {
+     moveSection('spaceship', 20, 0);
+}
 
-             moveSection('spaceship', 20, 0);
-           }
-
-        function moveSection(idStr, xOffset, yOffset) {
-            var domElemnt = document.getElementById(idStr);
-            if (domElemnt) {
-                var transformAttr = ' translate(' + xOffset + ',' + yOffset + ')';
-                domElemnt.setAttribute('transform', transformAttr);
-            }
-        }
+        
           // Load the SVG dynamically
           function loadSVG() {
             document.getElementById("svg-Container").innerHTML ="started"
@@ -35,7 +24,7 @@
                 })
                 .catch(error => {
                     console.error("Error loading SVG:", error);
-                    document.getElementById("svgContainer").innerHTML = "Failed to load SVG";
+                    document.getElementById("svgC-ontainer").innerHTML = "Failed to load SVG";
                 });
         }
 
