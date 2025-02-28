@@ -30,73 +30,73 @@ jobs:
         with:
           directory: ./
 
-  # css-linter:
-  #   name: Run CSS Linter
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
+  css-linter:
+    name: Run CSS Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       
-  #     - name: Run CSS Linter
-  #       if: always()
-  #       uses: actions-hub/stylelint@v1.1.6
-  #       env:
-  #         PATTERN: "styles/*.css"
+      - name: Run CSS Linter
+        if: always()
+        uses: actions-hub/stylelint@v1.1.6
+        env:
+          PATTERN: "styles/*.css"
           
-  # powershell-linter:
-  #   name: Run Powershell Linter
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Install PSScriptAnalyzer module
-  #       shell: pwsh
-  #       run: |
-  #         Set-PSRepository PSGallery -InstallationPolicy Trusted
-  #         Install-Module PSScriptAnalyzer -ErrorAction Stop
-  #     - name: Lint with PSScriptAnalyzer
-  #       if: always()
-  #       shell: pwsh
-  #       run: |
-  #         Invoke-ScriptAnalyzer -Path *.ps1 -Recurse -Outvariable issues
-  #         $errors   = $issues.Where({$_.Severity -eq 'Error'})
-  #         $warnings = $issues.Where({$_.Severity -eq 'Warning'})
-  #         if ($errors) {
-  #             Write-Error "There were $($errors.Count) errors and $($warnings.Count) warnings total."
-  #         } else {
-  #             Write-Output "There were $($errors.Count) errors and $($warnings.Count) warnings total."
-  #         }
+  powershell-linter:
+    name: Run Powershell Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PSScriptAnalyzer module
+        shell: pwsh
+        run: |
+          Set-PSRepository PSGallery -InstallationPolicy Trusted
+          Install-Module PSScriptAnalyzer -ErrorAction Stop
+      - name: Lint with PSScriptAnalyzer
+        if: always()
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path *.ps1 -Recurse -Outvariable issues
+          $errors   = $issues.Where({$_.Severity -eq 'Error'})
+          $warnings = $issues.Where({$_.Severity -eq 'Warning'})
+          if ($errors) {
+              Write-Error "There were $($errors.Count) errors and $($warnings.Count) warnings total."
+          } else {
+              Write-Output "There were $($errors.Count) errors and $($warnings.Count) warnings total."
+          }
 
-  #           if ($issues) {
-  #             # Format issues into a markdown table
-  #             $markdownTable = ""
-  #             $markdownTable += "| Severity | RuleName | ScriptName | Line | Message |`n"
-  #             $markdownTable += "|----------|----------|------------|------|---------|`n"
+            if ($issues) {
+              # Format issues into a markdown table
+              $markdownTable = ""
+              $markdownTable += "| Severity | RuleName | ScriptName | Line | Message |`n"
+              $markdownTable += "|----------|----------|------------|------|---------|`n"
 
-  #             foreach ($issue in $issues) {
-  #               $markdownTable += "| $($issue.Severity) |$($issue.RuleName) | $($issue.ScriptName) |$($issue.Line) | $($issue.Message) |`n"
-  #             }
+              foreach ($issue in $issues) {
+                $markdownTable += "| $($issue.Severity) |$($issue.RuleName) | $($issue.ScriptName) |$($issue.Line) | $($issue.Message) |`n"
+              }
 
-  #             # Output the markdown table to the step summary
-  #             $markdownTable | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-  #           }
+              # Output the markdown table to the step summary
+              $markdownTable | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+            }
 
-  #         # Fail the build if there are any errors in the script files
-  #         if ($errors) {
-  #             Write-Error "Errors found in script files."
-  #             exit 1
-  #         } else {
-  #             Write-Output "No errors found in script files."
-  #         }
+          # Fail the build if there are any errors in the script files
+          if ($errors) {
+              Write-Error "Errors found in script files."
+              exit 1
+          } else {
+              Write-Output "No errors found in script files."
+          }
 
-  # svg-linter:
-  #   name: Run SVG Linter
-  #   runs-on: ubuntu-latest
-  #   steps:
+  svg-linter:
+    name: Run SVG Linter
+    runs-on: ubuntu-latest
+    steps:
     
-  #   - name: Check out repository code
-  #     uses: actions/checkout@v4
+    - name: Check out repository code
+      uses: actions/checkout@v4
 
-  #   - name: Run SVG Linter
-  #     if: always()
-  #     uses: "szepeviktor/svg-validator@v1.0.0"
-  #     with:
-  #       svg_path: "/**/*.svg"
+    - name: Run SVG Linter
+      if: always()
+      uses: "szepeviktor/svg-validator@v1.0.0"
+      with:
+        svg_path: "/**/*.svg"
