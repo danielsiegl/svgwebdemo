@@ -18,7 +18,7 @@
         }
           // Load the SVG dynamically
           function loadSVG() {
-            document.getElementById("svgContainer").innerHTML ="started"
+            document.getElementById("svg-Container").innerHTML ="started"
             fetch("images/spaceship.svg") // Replace with your actual SVG file path
                 .then(response => {
                     if (!response.ok) {
@@ -31,7 +31,7 @@
                     let svgLines = svgText.split('\n');
                     svgLines.splice(0, 3, '<svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg" version="1.1" height="200" width="200" viewBox="0 0 200 200">');
                     updatedSVG = svgLines.join('\n');
-                    document.getElementById("svgContainer").innerHTML = updatedSVG; // Inject SVG
+                    document.getElementById("svg-Container").innerHTML = updatedSVG; // Inject SVG
                 })
                 .catch(error => {
                     console.error("Error loading SVG:", error);
