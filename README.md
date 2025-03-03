@@ -4,6 +4,8 @@
 
 # SVG Web Demo
 
+https://danielsiegl.github.io/svgwebdemo/
+
 Welcome to the SVG Web Demo project! This repository is designed to introduce young learners (ages 10-14) to modern software development practices, including:
 
 - **Feature Branches**: Working on new features in isolated branches.
