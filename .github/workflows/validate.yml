@@ -16,7 +16,7 @@ jobs:
     name: Run HTML Linter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Run HTML5Validator
         if: always()
@@ -34,7 +34,7 @@ jobs:
     name: Run CSS Linter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Run CSS Linter
         if: always()
@@ -46,7 +46,7 @@ jobs:
     name: Run Powershell Linter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install PSScriptAnalyzer module
         shell: pwsh
         run: |
@@ -93,7 +93,7 @@ jobs:
     steps:
     
     - name: Check out repository code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Run SVG Linter
       if: always()
